@@ -1,0 +1,9 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/Sri Divya/Downloads/Appoint/platforms/android/platform_www/cordova_plugins.js",
+        "C:/Users/Sri Divya/Downloads/Appoint/plugins/cordova-plugin-console/www/console-via-logger.js",
+        "C:/Users/Sri Divya/Downloads/Appoint/plugins/cordova-plugin-console/www/logger.js",
+        "C:/Users/Sri Divya/Downloads/Appoint/plugins/cordova-plugin-device/src/blackberry10/index.js",
+        "C:/Users/Sri Divya/Downloads/Appoint/plugins/cordova-plugin-device/src/browser/DeviceProxy.js"
+    ]
+}

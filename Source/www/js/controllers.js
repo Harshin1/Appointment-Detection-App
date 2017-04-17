@@ -17,12 +17,43 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicPopup) {
+
+     
   $scope.chat = Chats.get($stateParams.chatId);
+    $scope.data = Chats.data($scope.chat.id);
+    console.log($scope.chat.datetime);
+    console.log($scope.chat.id);
+   console.log($scope.chat.name);
+    $scope.getDetected = function($index){
+        console.log($index);
+        Chats.showAlert($index,$scope.chat.datetime,$scope.chat.name);
+        
+    }
+
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AccountCtrl', function($scope, $http, $state) {
+    
+
+    username = localStorage.getItem("UserName");
+    $http({
+                type: "GET",
+                url: 'https://api.mlab.com/api/1/databases/appointdb/collections/users?q={username:\'' + username + '\'}&apiKey=EGAP5ndZR-TtwcytcnEZBQ-NH6PVDoiI',
+
+                contentType: "application/json"
+            })
+            .success(function(data) {
+          document.getElementById("firstname").innerHTML = data[0].firstname;
+        document.getElementById("lastname").innerHTML = data[0].lastname;
+        document.getElementById("username").innerHTML = data[0].username;
+        document.getElementById("mobilenumber").innerHTML = data[0].mobilenumber;
+    });
+    $state.go($state.current, {}, {reload: true});
+    
+    
+            $scope.logout = function(){
+            $state.go("Login");
+            }
+    
 });
