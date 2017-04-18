@@ -10,7 +10,7 @@ In addition, the appointments like when, who will be detected and highlighted in
 click on any message so that only the meeting details appear. It also has also other options to set a profile picture, update user information,
 The user has to register and login to the access it.
 
-It has a user friendly UI and built from scratch in 1 day.
+It has a user friendly UI and built from scratch.
 
 Technologies used: Angular JS, JQuery, Javascript, REST API, MongoLab, Ionic Framework, HTML, CSS. 
 
